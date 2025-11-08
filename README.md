@@ -1,4 +1,4 @@
-## 🛍️ Telegram Shop Bot (Aiogram 3 + SQLite)
+## Telegram Shop Bot (Aiogram 3 + SQLite)
 
 A simple and modular Telegram shop bot built with **Aiogram 3**, using **SQLite** for local storage.
 
@@ -9,7 +9,7 @@ A simple and modular Telegram shop bot built with **Aiogram 3**, using **SQLite*
 
 ---
 
-### ✨ Features
+###  Features
 
 - Built with **Python + Aiogram 3**
 - **SQLite** database (easy to deploy, no external dependencies)
@@ -19,7 +19,7 @@ A simple and modular Telegram shop bot built with **Aiogram 3**, using **SQLite*
 
 ---
 
-### 🏗️ Tech Stack
+### Tech Stack
 
 | Component | Technology |
 |----------|------------|
@@ -29,7 +29,7 @@ A simple and modular Telegram shop bot built with **Aiogram 3**, using **SQLite*
 
 ---
 
-### 🚀 How to Run
+###  How to Run
 
 ```bash
 git clone https://github.com/ku-devxd/aiogram-shop-bot.git

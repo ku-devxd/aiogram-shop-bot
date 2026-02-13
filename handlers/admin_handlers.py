@@ -12,7 +12,7 @@ from config import ADMIN_ID
 router = Router()
 
 
-# ------- FSM -------
+# ------- FSM
 class AddProductFSM(StatesGroup):
     name = State()
     price = State()
@@ -21,7 +21,7 @@ class AddProductFSM(StatesGroup):
     image = State()
 
 
-# ------- MULTILANG TEXTS -------
+# ------- MULTILANG TEXTS 
 TEXTS = {
     "en": {
         "send_name": "✏ Send product name:",
@@ -29,7 +29,7 @@ TEXTS = {
         "send_description": "📝 Send description:",
         "send_category": "Enter category (men / women / electronics / etc):",
         "send_image": "📸 Send image URL or photo:",
-        "added": "✅ Product successfully added!"
+        "added": "Product successfully added!"
     },
     "ru": {
         "send_name": "✏ Отправьте название товара:",
@@ -37,7 +37,7 @@ TEXTS = {
         "send_description": "📝 Отправьте описание:",
         "send_category": "Введите категорию (men / women / electronics / etc):",
         "send_image": "📸 Отправьте фото или ссылку на изображение:",
-        "added": "✅ Товар успешно добавлен!"
+        "added": "Товар успешно добавлен!"
     }
 }
 
@@ -47,11 +47,11 @@ async def t(user_id: int, key: str) -> str:
     return TEXTS.get(lang, TEXTS["en"]).get(key, key)
 
 
-# ------- ADD PRODUCT -------
+# ------- ADD PRODUCT
 @router.message(F.text == "/add_product")
 async def add_start(message: Message, state: FSMContext):
     if message.from_user.id != ADMIN_ID:
-        return await message.answer("🚫 You are not admin.")
+        return await message.answer("You are not admin.")
     await state.set_state(AddProductFSM.name)
     await message.answer(await t(message.from_user.id, "send_name"))
 
@@ -80,7 +80,6 @@ async def add_desc(message: Message, state: FSMContext):
 @router.message(AddProductFSM.category)
 async def add_category(message: Message, state: FSMContext):
     category = message.text.strip().lower()
-    # можно добавить проверку на допустимые категории, например:
     valid_categories = ["men", "women", "electronics", "other"]
     if category not in valid_categories:
         category = "other"

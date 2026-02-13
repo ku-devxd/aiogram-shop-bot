@@ -2,7 +2,6 @@ from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
 from base import Base
 from config import DATABASE_URL
-# импортируем модели только чтобы они были в metadata
 import models.user_model
 import models.product_model
 

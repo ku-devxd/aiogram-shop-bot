@@ -11,5 +11,4 @@ class Product(Base):
     description: Mapped[str] = mapped_column(Text)
     photo_url: Mapped[str] = mapped_column(String, nullable=True)
 
-    category: Mapped[str] = mapped_column(String(50))  # ✅ новая строка
-    # image_url: Mapped[str] = mapped_column(String, nullable=True)  # ✅ новая строка
+    category: Mapped[str] = mapped_column(String(50)) 

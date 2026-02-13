@@ -11,4 +11,3 @@ class CartItem(Base):
     quantity = Column(Integer, default=1)
 
     product = relationship("Product")
-    # You can add more fields if necessary, such as timestamps or status indicators.

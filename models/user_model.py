@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String
-from base import Base  # <-- Base из base.py
+from base import Base 
 
 class User(Base):
     __tablename__ = "users"
@@ -8,7 +8,7 @@ class User(Base):
     lang = Column(String, default="en")
 
 async def get_user_lang(user_id: int) -> str:
-    from database import async_session  # импорт внутри функции
+    from database import async_session  
 
     async with async_session() as session:
         result = await session.get(User, user_id)

@@ -1,6 +1,6 @@
 aiogram==3.13.1
 SQLAlchemy>=1.4
-aiosqlite          # для SQLite
-asyncpg            # для PostgreSQL
+aiosqlite          
+asyncpg            
 greenlet
-databases[asyncpg]  # для асинхронной работы с PostgreSQL
+databases[asyncpg] 
